@@ -6,5 +6,5 @@
 	<!-- Root Context: defines shared resources visible to all other web components -->
 	
 	<bean id="loginServiceImpl" class="com.sonata.appraisal.service.LoginServiceImpl"> </bean>
-	<bean id="managerServiceImpl" class="com.sonata.appraisal.service.ManagerServiceImpl"> </bean>
+
 </beans>

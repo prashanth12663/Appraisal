@@ -13,7 +13,7 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import org.apache.log4j.Logger;
-import org.springframework.beans.factory.annotation.Autowired;
+
 
 import com.sonata.appraisal.model.Login;
 

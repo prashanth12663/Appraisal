@@ -20,13 +20,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.sonata.appraisal.model.Login;
-import com.sonata.appraisal.service.LoginService;
-import com.sonata.appraisal.service.LoginServiceImpl; 
+import com.sonata.appraisal.service.LoginService; 
 
 @Controller
 @RequestMapping(value = "/login")
 public class LoginController {
 	static final Logger logger = Logger.getLogger(LoginController.class);
+	
 	@Autowired
 	private LoginService loginServiceImpl;
 	/**

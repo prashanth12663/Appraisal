@@ -156,118 +156,118 @@
                                                                 <div>
                                                                     <div class="form-group col-md-3">
                                                                         <label>Current CTC</label>
-                                                                        <input type="text" class="form-control" value="">
+                                                                        <input type="text" class="form-control" value="${employee.currentctc}">
                                                                     </div>
                                                                     <div class="form-group col-md-3">
                                                                         <label>CBF Role</label>
-                                                                        <input type="text" class="form-control">
+                                                                        <input type="text" class="form-control" value="${employee.cbfrole}">
                                                                     </div>
                                                                     <div class="form-group col-md-3">
                                                                         <label>Role Cluster</label>
-                                                                        <input type="text" class="form-control">
+                                                                        <input type="text" class="form-control" value="${employee.rolecluster}">
                                                                     </div>
                                                                     <div class="form-group col-md-3">
                                                                         <label>CBF Level</label>
-                                                                        <input type="text" class="form-control">
+                                                                        <input type="text" class="form-control" value="${employee.cbflevel}">
                                                                     </div>
                                                                     <div class="form-group col-md-3">
                                                                         <label>Performance Category</label>
-                                                                        <input type="text" class="form-control">
+                                                                        <input type="text" class="form-control" value="${employee.perfcatg}">
                                                                     </div>
                                                                     <hr />
 
                                                                     <div class="form-group col-md-3">
                                                                         <label>Min</label>
-                                                                        <input type="text" class="form-control">
+                                                                        <input type="text" class="form-control" value="${employee.min}">
                                                                     </div>
                                                                     <div class="form-group col-md-3">
                                                                         <label>Max</label>
-                                                                        <input type="text" class="form-control">
+                                                                        <input type="text" class="form-control" value="${employee.max}">
                                                                     </div>
                                                                     <div class="form-group col-md-3">
                                                                         <label>Kitty</label>
-                                                                        <input type="text" class="form-control">
+                                                                        <input type="text" class="form-control" value="${employee.kitty}">
                                                                     </div>
                                                                     <div class="form-group col-md-3">
                                                                         <label>Benchmark Salary</label>
-                                                                        <input type="text" class="form-control">
+                                                                        <input type="text" class="form-control" value="${employee.benchmarksalary}">
                                                                     </div>
                                                                     <div class="form-group col-md-4">
                                                                         <label>% inc required to reach Benchmark</label>
-                                                                        <input type="text" class="form-control">
+                                                                        <input type="text" class="form-control" value="${employee.percincrreqdtoGettobenchmark}">
                                                                     </div>
                                                                     <div class="form-group col-md-3">
                                                                         <label>Range</label>
-                                                                        <input type="text" class="form-control">
+                                                                        <input type="text" class="form-control" value="${employee.incrrange}">
                                                                     </div>
                                                                     <div class="form-group col-md-3">
                                                                         <label>Sub-Range</label>
-                                                                        <input type="text" class="form-control">
+                                                                        <input type="text" class="form-control" value="${employee.subrange}">
                                                                     </div>
                                                                     <hr />
                                                                     <div class="form-group col-md-3">
                                                                         <label>Wtd % Increment</label>
-                                                                        <input type="text" class="form-control">
+                                                                        <input type="text" class="form-control" value="${employee.wtdpercentincr}">
                                                                     </div>
                                                                     <div class="form-group col-md-3">
                                                                         <label>Wtd Increment</label>
-                                                                        <input type="text" class="form-control">
+                                                                        <input type="text" class="form-control" value="${employee.wtdincr}">
                                                                     </div>
                                                                     <div class="form-group col-md-3">
                                                                         <label>New CTC</label>
-                                                                        <input type="text" class="form-control">
+                                                                        <input type="text" class="form-control" value="${employee.newCTC}">
                                                                     </div>
                                                                     <div class="form-group col-md-3">
                                                                         <label>Final % Increment</label>
-                                                                        <input type="text" class="form-control">   
+                                                                        <input type="text" class="form-control" value="${employee.finalpercincr}">   
                                                                     </div>
                                                                     <div class="form-group col-md-3">
                                                                         <label>New Increment</label>
-                                                                        <input type="number" class="form-control">
+                                                                        <input type="number" class="form-control" value="${employee.NewIncr}">
                                                                     </div>
                                                                     <div class="form-group col-md-3">
                                                                         <label>Revised CTC</label>
-                                                                        <input type="number" class="form-control">
+                                                                        <input type="number" class="form-control" value="${employee.RevRecoCTC}">
                                                                     </div>
                                                                     <hr />
                                                                     <div class="form-group col-md-4">
                                                                         <label>Reason For Change</label>
-                                                                        <textarea class="form-control" rows="3"></textarea>
+                                                                        <textarea class="form-control" rows="3" value="${employee.ReasonForChange}"></textarea>
                                                                     </div>
                                                                     <div class="form-group col-md-4">
                                                                         <label>Recommend for Special Bonus(Amount)</label>
-                                                                        <textarea class="form-control" rows="3"></textarea>
+                                                                        <textarea class="form-control" rows="3" value="${employee.RecForSpecialBonus}"></textarea>
                                                                     </div>
                                                                     <div class="form-group col-md-4">
                                                                         <label>Reason for Special Bonus</label>
-                                                                        <textarea class="form-control" rows="3"></textarea>
+                                                                        <textarea class="form-control" rows="3" value="${employee.ReasonForSPBonus}"></textarea>
                                                                     </div>
                                                                     <hr />
                                                                     <div class="form-group col-md-3">
                                                                         <label>Current Grade</label>
-                                                                        <input type="text" class="form-control">
+                                                                        <input type="text" class="form-control" value="${employee.currentGrade}">
                                                                     </div>
                                                                     <div class="form-group col-md-3">
                                                                         <label>Maximum Grade</label>
-                                                                        <input type="text" class="form-control">
+                                                                        <input type="text" class="form-control" value="${employee.maxGrade}">
                                                                     </div>
                                                                     <div class="form-group col-md-3">
                                                                         <label>Promotion Recommendation</label>
-                                                                        <input type="text" class="form-control">
+                                                                        <input type="text" class="form-control" value="${employee.promotion}">
                                                                     </div>
                                                                     <div class="form-group col-md-3">
                                                                         <label>Revised Grade</label>
-                                                                        <input type="text" class="form-control">
+                                                                        <input type="text" class="form-control" value="${employee.revisedGrade}">
                                                                     </div>
                                                                     <hr />
                                                                     <div class="form-group col-md-6" id="approvercomments">
                                                                             <label>Approver Justification</label>
-                                                                            <textarea class="form-control" rows="3"></textarea>                                                                        </div>
+                                                                            <textarea class="form-control" rows="3" value="${employee.approverReason}"></textarea>                                                                        </div>
                                                                     </div>
                                                                     </form>
                                                                     <div class="form-group col-md-6" id="hrcomments">
                                                                         <label>HR Justification</label>
-                                                                        <textarea class="form-control" rows="3"></textarea>                                                                        </div>
+                                                                        <textarea class="form-control" rows="3" value="${employee.hRReason}"></textarea>                                                                        </div>
                                                                      </div>
                                                                     </hr>
                                                                      <div class="col-md-12 text-right">
