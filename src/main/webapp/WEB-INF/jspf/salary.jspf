@@ -1,0 +1,75 @@
+<%@page contentType="text/html;charset=UTF-8"%>
+<%@page pageEncoding="UTF-8"%>
+<%@ page session="false"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<html lang="en">
+<head>
+<title>Sonata</title>
+<meta charset="utf-8">
+</head>
+<body>
+	<div class="row">
+		<form:form modelAttribute="humanresourceModel" action="salaryBands"
+			method="POST">
+			<div class="col-md-12">
+				<div class="table-responsive">
+					<table class="table salband-table">
+					
+						<thead>
+							<tr>
+							
+								<th>Cluster</th>
+								<th colspan="2">1</th>
+								<th colspan="2">2</th>
+								<th colspan="2">3</th>
+								<th colspan="2">4</th>
+								<th></th>
+							</tr>
+						</thead>
+						<thead>
+							<tr>
+								<th>HCC</th>
+								<th>Min</th>
+								<th>Max</th>
+								<th>Min</th>
+								<th>Max</th>
+								<th>Min</th>
+								<th>Max</th>
+								<th>Min</th>
+								<th>Max</th>
+								<th rowspan="2">Action</th>
+							</tr>
+						</thead>
+						<tbody>
+						<c:forEach items="${HumanResource.salaryBandList}" var="sal" varStatus="loop">
+							<tr>
+								<td><input type="text" name="hcc" id="hcc" value="${sal.hcc[0]}" /></td>
+								 <td><input type="text" name="min1" value="${sal.min1[0]}"/></td>
+								<td><input type="text" name="max1" value="${sal.max1[0]}" /></td>
+								<td><input type="text" name="min2" value="${sal.min2[0]}" /></td>
+								<td><input type="text" name="max2" value="${sal.max2[0]}" /></td>
+								<td><input type="text" name="min3" value="${sal.min3[0]}" /></td>
+								<td><input type="text" name="max3" value="${sal.max3[0]}" /></td>
+								<td><input type="text" name="min4" value="${sal.min4[0]}" /></td>
+								<td><input type="text" name="max4" value="${sal.max4[0]}" /></td> 
+								<td><a>Delete</a></td>
+							</tr>
+							</c:forEach>
+						</tbody>
+						
+					</table>
+					<div class="hr-submit-btn">
+						<button class="btn btn-primary add-salbands" type="button">
+							<i class="fa fa-plus-circle" aria-hidden="true"></i> Add Row
+						</button>
+						<button class="btn btn-success pull-right">Submit</button>
+					</div>
+				</div>
+
+			</div>
+		</form:form>
+	</div>
+</body>
+</html>

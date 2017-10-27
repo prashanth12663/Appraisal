@@ -18,6 +18,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.sonata.appraisal.model.Login;
 import com.sonata.appraisal.service.LoginService; 
@@ -51,9 +52,9 @@ public class LoginController {
  */
 	@RequestMapping(method = RequestMethod.POST)
 
-	public String create(HttpServletRequest request,@ModelAttribute("loginModel") Login login, BindingResult result,Model model) throws IOException {
+	public ModelAndView create(HttpServletRequest request,@ModelAttribute("loginModel") Login login, BindingResult result,Model model) throws IOException {
 		if (result.hasErrors()) {
-			return "loginForm";
+			return new ModelAndView("loginForm");
 		}
 		request.setAttribute("User",login.getEmpName());
 		String role=loginServiceImpl.authenticateLogin(login);
@@ -61,14 +62,14 @@ public class LoginController {
 		if(role.equals("MANAGER")){
 		loginServiceImpl.getEmployeeDetails(login);
 		model.addAttribute("Login", login);	
-		return "manager"; 
+		return new ModelAndView("manager"); 
 		}
 		else if(role.equals("HR")){
 			model.addAttribute("Login", login);	
-			return "humanresource";
+			return new ModelAndView("redirect:/salaryDetails");
 		}
 		else{
-			return "loginForm";
+			return new ModelAndView("loginForm");
 		}
 		
 	}

@@ -49,7 +49,14 @@ public class Login {
 	private String hRReason;
 	private String hcc;
 	private ArrayList<Login> employeeDetailsList=new ArrayList<Login>();
+	private HumanResource humanResource;
 	
+	public HumanResource getHumanResource() {
+		return humanResource;
+	}
+	public void setHumanResource(HumanResource humanResource) {
+		this.humanResource = humanResource;
+	}
 	public String getHcc() {
 		return hcc;
 	}

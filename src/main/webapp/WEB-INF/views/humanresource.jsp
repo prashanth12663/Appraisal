@@ -4,31 +4,19 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+
 <!DOCTYPE html>
- <html lang="en">
+<html lang="en">
 <head>
 <title>Sonata</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="icon" href="media/images/favicon.ico" type="image/x-icon">
-<link rel="stylesheet" href="media/vendors/bootstrap/bootstrap.min.css">
-<script src="media/vendors/jquery/jquery.min.js"></script>
-<script src="media/vendors/bootstrap/bootstrap.min.js"></script>
-<link rel="stylesheet"
-	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="icon" href="resources/images/favicon.ico"
-	type="resources/image/x-icon">
-<link rel="stylesheet"
-	href="resources/vendors/bootstrap/bootstrap.min.css">
-<script src="resources/vendors/bootstrap/bootstrap.min.js"></script>
+<link rel="icon" href="resources/images/favicon.ico" type="resources/image/x-icon">
 <script src="resources/vendors/jquery/jquery.min.js"></script>
-<link rel="stylesheet"
-	href="resources/vendors/fontawesome/font-awesome.min.css">
+<link rel="stylesheet" href="resources/vendors/bootstrap/bootstrap.min.css">
+<script src="resources/vendors/bootstrap/bootstrap.min.js"></script>
+<link rel="stylesheet" href="resources/vendors/fontawesome/font-awesome.min.css">
 <link rel="stylesheet" href="resources/css/styles.css">
-
-<link rel="stylesheet" href="media/css/styles.css">
 <script>
         $(document).ready(function () {
             $('.table-action div.empActionTabs').hide();
@@ -42,15 +30,16 @@
             var min3 ="<input type='text' class='form-control' id=''/>";
             var max4 ="<input type='text' class='form-control' id=''/>";
             var min4 ="<input type='text' class='form-control' id=''/>";
-            var markup = "<tr><td>" + hcc + "</td><td>" + max1 + "</td><td>" + min1 + "</td><td>" + max2 + "</td><td>" + min2 + "</td><td>" + max3 + "</td><td>" + min3 + "</td><td>" + max4 + "</td><td>" + min4 + "</td></tr>";
-            $("table tbody").append(markup);
+            var delete_sal ="<a href=">Delete</a>";
+            var markup = "<tr><td>" + hcc + "</td><td>" + max1 + "</td><td>" + min1 + "</td><td>" + max2 + "</td><td>" + min2 + "</td><td>" + max3 + "</td><td>" + min3 + "</td><td>" + max4 + "</td><td>" + min4 + "</td><td>" + delete_sal + "</td></tr>";
+            $("table.salband-table tbody").append(markup);
         });
         $(".add-clusters").click(function(){
             var cluster = "<input type='text' class='form-control' id=''/>";
             var role ="<input type='text' class='form-control' id=''/>";
             var typgrade ="<input type='text' class='form-control' id=''/>";
             var clusterrow = "<tr><td>" + cluster + "</td><td>" + role + "</td><td>" + typgrade + "</td></tr>";
-            $("table tbody").append(clusterrow);
+            $("table.clusters-table tbody").append(clusterrow);
         });
             $('tr.row_main').click(function () {
 
@@ -114,8 +103,9 @@
 						</ul>
 				
 						<div class="tab-content hrtab-cont">
-						<form:form action="savefile" method="post" enctype="multipart/form-data">
+						
 							<div id="home" class="tab-pane fade in active">
+							<form:form action="savefile" method="post" enctype="multipart/form-data">
 								<div class="row">
 									<div class="col-md-12">
 										<div class="clearfix"></div>
@@ -165,8 +155,9 @@
 										</div>
 									</div>
 								</div>
-							</div>
 							</form:form>
+							</div>
+							
 							<div id="menu1" class="tab-pane fade">
 								<div class="row">
 									<div class="col-md-8">
@@ -218,96 +209,40 @@
 								</div>
 							</div>
 							<div id="salbands" class="tab-pane fade">
-								<div class="row">
-									<div class="col-md-12">
-										<div class="table-responsive">
-											<table class="table">
-												<thead>
-													<tr>
-														<th>Cluster</th>
-														<th colspan="2">1</th>
-														<th colspan="2">2</th>
-														<th colspan="2">3</th>
-														<th colspan="2">4</th>
-														<th></th>
-													</tr>
-												</thead>
-												<thead>
-													<tr>
-														<th>HCC</th>
-														<th>Min</th>
-														<th>Max</th>
-														<th>Min</th>
-														<th>Max</th>
-														<th>Min</th>
-														<th>Max</th>
-														<th>Min</th>
-														<th>Max</th>
-														<th rowspan="2">Action</th>
-													</tr>
-												</thead>
-												<tbody>
-													<tr>
-														<td><input type="text" id="" class="form-control" /></td>
-														<td><input type="text" id="" class="form-control" /></td>
-														<td><input type="text" id="" class="form-control" /></td>
-														<td><input type="text" id="" class="form-control" /></td>
-														<td><input type="text" id="" class="form-control" /></td>
-														<td><input type="text" id="" class="form-control" /></td>
-														<td><input type="text" id="" class="form-control" /></td>
-														<td><input type="text" id="" class="form-control" /></td>
-														<td><input type="text" id="" class="form-control" /></td>
-														<td><a>Delete</a></td>
-													</tr>
-												</tbody>
-											</table>
-											<div class="hr-submit-btn">
-												<button class="btn btn-primary add-salbands" type="button">
-													<i class="fa fa-plus-circle" aria-hidden="true"></i> Add
-													Row
-												</button>
-												<button class="btn btn-success pull-right">Submit</button>
-											</div>
-										</div>
-									</div>
-								</div>
+							aaaaaaaaaaaaaaa
+							<%@include file="../jspf/salary.jspf"%>
+							bbbbbbbbbbbbbb
 							</div>
 							<div id="clusters" class="tab-pane fade">
 								<div class="row">
-									<div class="col-md-8">
+									<div class="col-md-4">
 										<div class="table-responsive">
-											<table class="table">
+											<table class="table clusters-table">
 												<thead>
 													<tr>
 														<th>Cluster</th>
 														<th>Role</th>
-														<th>Typical Grades</th>
 													</tr>
 												</thead>
 												<tbody>
 													<tr>
 														<td>1</td>
 														<td><input type="text" id="" class="form-control" /></td>
-														<td><input type="text" id="" class="form-control" /></td>
 													</tr>
 													<tr>
 														<td>2</td>
-														<td><input type="text" id="" class="form-control" /></td>
 														<td><input type="text" id="" class="form-control" /></td>
 													</tr>
 													<tr>
 														<td>3</td>
 														<td><input type="text" id="" class="form-control" /></td>
-														<td><input type="text" id="" class="form-control" /></td>
 													</tr>
 													<tr>
 														<td>4</td>
 														<td><input type="text" id="" class="form-control" /></td>
-														<td><input type="text" id="" class="form-control" /></td>
 													</tr>
 													<tr>
 														<td>5</td>
-														<td><input type="text" id="" class="form-control" /></td>
 														<td><input type="text" id="" class="form-control" /></td>
 													</tr>
 												</tbody>
@@ -336,8 +271,7 @@
 														</tr>
 														<tr>
 															<th>Perf Category</th>
-															<th>1
-															</td>
+															<th>1</th>
 															<th>2</th>
 															<th>3</th>
 														</tr>
@@ -345,84 +279,21 @@
 													<tbody>
 														<tr>
 															<td>1</td>
-															<td><select class="form-control" id="">
-																	<option>Select</option>
-																	<option>Lowest</option>
-																	<option>Low</option>
-																	<option>Medium</option>
-																	<option>High</option>
-																	<option>Highest</option>
-															</select></td>
-															<td><select class="form-control" id="">
-																	<option>Select</option>
-																	<option>Lowest</option>
-																	<option>Low</option>
-																	<option>Medium</option>
-																	<option>High</option>
-																	<option>Highest</option>
-															</select></td>
-															<td><select class="form-control" id="">
-																	<option>Select</option>
-																	<option>Lowest</option>
-																	<option>Low</option>
-																	<option>Medium</option>
-																	<option>High</option>
-																	<option>Highest</option>
-															</select></td>
+															<td><input type="text" class="form-control" /></td>
+															<td><input type="text" class="form-control" /></td>
+															<td><input type="text" class="form-control" /></td>
 														</tr>
 														<tr>
 															<td>2</td>
-															<td><select class="form-control" id="">
-																	<option>Select</option>
-																	<option>Lowest</option>
-																	<option>Low</option>
-																	<option>Medium</option>
-																	<option>High</option>
-																	<option>Highest</option>
-															</select></td>
-															<td><select class="form-control" id="">
-																	<option>Select</option>
-																	<option>Lowest</option>
-																	<option>Low</option>
-																	<option>Medium</option>
-																	<option>High</option>
-																	<option>Highest</option>
-															</select></td>
-															<td><select class="form-control" id="">
-																	<option>Select</option>
-																	<option>Lowest</option>
-																	<option>Low</option>
-																	<option>Medium</option>
-																	<option>High</option>
-																	<option>Highest</option>
-															</select></td>
+															<td><input type="text" class="form-control" /></td>
+															<td><input type="text" class="form-control" /></td>
+															<td><input type="text" class="form-control" /></td>
 														</tr>
 														<tr>
 															<td>3</td>
-															<td><select class="form-control" id="">
-																	<option>Select</option>
-																	<option>Lowest</option>
-																	<option>Low</option>
-																	<option>Medium</option>
-																	<option>High</option>
-																	<option>Highest</option>
-															</select></td>
-															<td><select class="form-control" id="">
-																	<option>Select</option>
-																	<option>Lowest</option>
-																	<option>Low</option>
-																	<option>Medium</option>
-																	<option>High</option>
-																	<option>Highest</option>
-															</select></td>
-															<td><select class="form-control" id="">
-																	<option>Select</option>
-																	<option>Lowest</option>
-																	<option>Low</option>
-																	<option>Medium</option>
-																	<option>High</option>
-																	<option>Highest</option>
-															</select></td>
+															<td><input type="text" class="form-control" /></td>
+															<td><input type="text" class="form-control" /></td>
+															<td><input type="text" class="form-control" /></td>
 														</tr>
 													</tbody>
 												</table>
@@ -433,47 +304,69 @@
 										</div>
 										<div class="">
 											<div class="col-md-8">
-												<h3>Weighted Increase Plan - ABC in ETG /MBA scheme</h3>
+												<h3>Weighted Increase for Below</h3>
 												<div class="table-responsive">
 													<table class="table">
 														<thead>
+														<tr>
+														    <th></th>
+														    <th colspan="8">Weighted % Increment</th>
+														    </tr>
 															<tr>
 																<th>Perf Category</th>
-																<th>1
-																</td>
-																<th>2</th>
-																<th>3</th>
-																<th>4</th>
-															</tr>
+																<th>-30%</th>
+																<th>-20%</th>
+																<th>-10%</th>
+																<th>10%</th>
+																<th>20%</th>
+																<th>30%</th>
+																<th>40%</th>
+																<th>50%</th>															
 														</thead>
 														<tbody>
 															<tr>
-																<td></td>
-																<td></td>
-																<td></td>
-																<td></td>
-																<td></td>
+																<td>1</td>
+																<td><input type="text" class="form-control" /></td>
+																<td><input type="text" class="form-control" /></td>
+																<td><input type="text" class="form-control" /></td>
+																<td><input type="text" class="form-control" /></td>
+																<td><input type="text" class="form-control" /></td>
+																<td><input type="text" class="form-control" /></td>
+																<td><input type="text" class="form-control" /></td>
+																<td><input type="text" class="form-control" /></td>
 															</tr>
 															<tr>
-																<td></td>
-																<td></td>
-																<td></td>
-																<td></td>
-																<td></td>
+																<td>2</td>
+																<td><input type="text" class="form-control" /></td>
+																<td><input type="text" class="form-control" /></td>
+																<td><input type="text" class="form-control" /></td>
+																<td><input type="text" class="form-control" /></td>
+																<td><input type="text" class="form-control" /></td>
+																<td><input type="text" class="form-control" /></td>
+																<td><input type="text" class="form-control" /></td>
+																<td><input type="text" class="form-control" /></td>
 															</tr>
 															<tr>
-																<td></td>
-																<td></td>
-																<td></td>
-																<td></td>
-																<td></td>
+																<td>3</td>
+																<td><input type="text" class="form-control" /></td>
+																<td><input type="text" class="form-control" /></td>
+																<td><input type="text" class="form-control" /></td>
+																<td><input type="text" class="form-control" /></td>
+																<td><input type="text" class="form-control" /></td>
+																<td><input type="text" class="form-control" /></td>
+																<td><input type="text" class="form-control" /></td>
+																<td><input type="text" class="form-control" /></td>
 															</tr>
 															<tr>
-																<td></td>
-																<td></td>
-																<td></td>
-																<td></td>
-																<td></td>
+																<td>4</td>
+																<td><input type="text" class="form-control" /></td>
+																<td><input type="text" class="form-control" /></td>
+																<td><input type="text" class="form-control" /></td>
+																<td><input type="text" class="form-control" /></td>
+																<td><input type="text" class="form-control" /></td>
+																<td><input type="text" class="form-control" /></td>
+																<td><input type="text" class="form-control" /></td>
+																<td><input type="text" class="form-control" /></td>
 															</tr>
 														</tbody>
 													</table>
@@ -482,7 +375,7 @@
 													<button class="btn btn-success pull-right">Submit</button>
 												</div>
 											</div>
-										</div>
+										</div>										
 										<div class="">
 											<div class="col-md-8">
 												<h3>Grade / Promotion Matrix</h3>
@@ -495,8 +388,7 @@
 															</tr>
 															<tr>
 																<th>Cluster</th>
-																<th>1
-																</td>
+																<th>1</th>
 																<th>2</th>
 																<th>3</th>
 															</tr>
@@ -527,73 +419,177 @@
 																</select></td>
 																<td><select class="form-control" id="">
 																		<option>Select</option>
-																		<option>Lowest</option>
-																		<option>Low</option>
-																		<option>Medium</option>
-																		<option>High</option>
-																		<option>Highest</option>
+																		<option>A1</option>
+																		<option>A2</option>
+																		<option>A3</option>
+																		<option>B1</option>
+																		<option>B2</option>
+																		<option>B3</option>
+																		<option>C1</option>
+																		<option>C2</option>
+																		<option>C3</option>
+																		<option>D1</option>
+																		<option>D2</option>
+																		<option>D3</option>
+																		<option>E1</option>
+																		<option>E2</option>
+																		<option>E3</option>
+																		<option>F1</option>
+																		<option>F2</option>
+																		<option>F3</option>
 																</select></td>
 																<td><select class="form-control" id="">
 																		<option>Select</option>
-																		<option>Lowest</option>
-																		<option>Low</option>
-																		<option>Medium</option>
-																		<option>High</option>
-																		<option>Highest</option>
+																		<option>A1</option>
+																		<option>A2</option>
+																		<option>A3</option>
+																		<option>B1</option>
+																		<option>B2</option>
+																		<option>B3</option>
+																		<option>C1</option>
+																		<option>C2</option>
+																		<option>C3</option>
+																		<option>D1</option>
+																		<option>D2</option>
+																		<option>D3</option>
+																		<option>E1</option>
+																		<option>E2</option>
+																		<option>E3</option>
+																		<option>F1</option>
+																		<option>F2</option>
+																		<option>F3</option>
 																</select></td>
 															</tr>
 															<tr>
 																<td>2</td>
 																<td><select class="form-control" id="">
 																		<option>Select</option>
-																		<option>Lowest</option>
-																		<option>Low</option>
-																		<option>Medium</option>
-																		<option>High</option>
-																		<option>Highest</option>
+																		<option>A1</option>
+																		<option>A2</option>
+																		<option>A3</option>
+																		<option>B1</option>
+																		<option>B2</option>
+																		<option>B3</option>
+																		<option>C1</option>
+																		<option>C2</option>
+																		<option>C3</option>
+																		<option>D1</option>
+																		<option>D2</option>
+																		<option>D3</option>
+																		<option>E1</option>
+																		<option>E2</option>
+																		<option>E3</option>
+																		<option>F1</option>
+																		<option>F2</option>
+																		<option>F3</option>
 																</select></td>
 																<td><select class="form-control" id="">
 																		<option>Select</option>
-																		<option>Lowest</option>
-																		<option>Low</option>
-																		<option>Medium</option>
-																		<option>High</option>
-																		<option>Highest</option>
+																		<option>A1</option>
+																		<option>A2</option>
+																		<option>A3</option>
+																		<option>B1</option>
+																		<option>B2</option>
+																		<option>B3</option>
+																		<option>C1</option>
+																		<option>C2</option>
+																		<option>C3</option>
+																		<option>D1</option>
+																		<option>D2</option>
+																		<option>D3</option>
+																		<option>E1</option>
+																		<option>E2</option>
+																		<option>E3</option>
+																		<option>F1</option>
+																		<option>F2</option>
+																		<option>F3</option>
 																</select></td>
 																<td><select class="form-control" id="">
 																		<option>Select</option>
-																		<option>Lowest</option>
-																		<option>Low</option>
-																		<option>Medium</option>
-																		<option>High</option>
-																		<option>Highest</option>
+																		<option>A1</option>
+																		<option>A2</option>
+																		<option>A3</option>
+																		<option>B1</option>
+																		<option>B2</option>
+																		<option>B3</option>
+																		<option>C1</option>
+																		<option>C2</option>
+																		<option>C3</option>
+																		<option>D1</option>
+																		<option>D2</option>
+																		<option>D3</option>
+																		<option>E1</option>
+																		<option>E2</option>
+																		<option>E3</option>
+																		<option>F1</option>
+																		<option>F2</option>
+																		<option>F3</option>
 																</select></td>
 															</tr>
 															<tr>
 																<td>3</td>
 																<td><select class="form-control" id="">
 																		<option>Select</option>
-																		<option>Lowest</option>
-																		<option>Low</option>
-																		<option>Medium</option>
-																		<option>High</option>
-																		<option>Highest</option>
+																		<option>A1</option>
+																		<option>A2</option>
+																		<option>A3</option>
+																		<option>B1</option>
+																		<option>B2</option>
+																		<option>B3</option>
+																		<option>C1</option>
+																		<option>C2</option>
+																		<option>C3</option>
+																		<option>D1</option>
+																		<option>D2</option>
+																		<option>D3</option>
+																		<option>E1</option>
+																		<option>E2</option>
+																		<option>E3</option>
+																		<option>F1</option>
+																		<option>F2</option>
+																		<option>F3</option>
 																</select></td>
 																<td><select class="form-control" id="">
 																		<option>Select</option>
-																		<option>Lowest</option>
-																		<option>Low</option>
-																		<option>Medium</option>
-																		<option>High</option>
-																		<option>Highest</option>
+																		<option>A1</option>
+																		<option>A2</option>
+																		<option>A3</option>
+																		<option>B1</option>
+																		<option>B2</option>
+																		<option>B3</option>
+																		<option>C1</option>
+																		<option>C2</option>
+																		<option>C3</option>
+																		<option>D1</option>
+																		<option>D2</option>
+																		<option>D3</option>
+																		<option>E1</option>
+																		<option>E2</option>
+																		<option>E3</option>
+																		<option>F1</option>
+																		<option>F2</option>
+																		<option>F3</option>
 																</select></td>
 																<td><select class="form-control" id="">
 																		<option>Select</option>
-																		<option>Lowest</option>
-																		<option>Low</option>
-																		<option>Medium</option>
-																		<option>High</option>
-																		<option>Highest</option>
+																		<option>A1</option>
+																		<option>A2</option>
+																		<option>A3</option>
+																		<option>B1</option>
+																		<option>B2</option>
+																		<option>B3</option>
+																		<option>C1</option>
+																		<option>C2</option>
+																		<option>C3</option>
+																		<option>D1</option>
+																		<option>D2</option>
+																		<option>D3</option>
+																		<option>E1</option>
+																		<option>E2</option>
+																		<option>E3</option>
+																		<option>F1</option>
+																		<option>F2</option>
+																		<option>F3</option>
 																</select></td>
 															</tr>
 														</tbody>
@@ -911,7 +907,7 @@
 					<div class="row">
 						<div class="col-md-6">
 							<div class="copyright-text">
-								© Sonata Software 2017 <span>|</span> <a>Sitemap</a> <span>|</span>
+								ï¿½ Sonata Software 2017 <span>|</span> <a>Sitemap</a> <span>|</span>
 								<a>Disclaimer</a> <span>|</span> <a>Privacy Statement</a>
 							</div>
 						</div>
